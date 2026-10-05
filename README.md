@@ -4,17 +4,42 @@ A starter repository for the CSC10014 Smart Virtual Assistant project.
 
 ## Setup
 
-TODO (Lab 1): write the exact steps a new teammate needs, from a fresh machine to
-running the app and the tests. Your partner will follow them without your help.
+Prerequisites: Python 3.10+, Git.
+
+    git clone git@github.com:EddieOuttaHere/lab01-EddieOuttaHere.git
+    cd lab01-EddieOuttaHere
+    python -m venv .venv
+    source .venv/bin/activate   # Windows: .venv\Scripts\activate
+    pip install -r requirements.txt
+    pip install -e .
 
 ## Run
 
-TODO
+    python -m assistant "where is the library?"
+    # -> Library: room B.201, open Mon-Sat 07:00-20:00.
+
+Or run interactively:
+
+    python -m assistant
+    # Study assistant (starter). Type 'quit' to exit.
 
 ## Test
 
-TODO
+    pytest -q
+    # -> 4 passed
 
 ## Project structure
 
-TODO
+    src/assistant/   - application code (the assistant itself)
+    tests/           - automated tests
+    docs/            - notes, logs, reports
+    data/            - sample data (e.g. offices.csv)
+    ui/              - user interface (added later in the course)
+    scripts/         - helper scripts (e.g. check_env.py)
+
+## Troubleshooting
+
+- "No module named assistant" -> you forgot `pip install -e .`, or the virtual
+  environment is not active (prompt should start with `(.venv)`).
+- PowerShell blocks `Activate.ps1` -> run:
+  `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
